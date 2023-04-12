@@ -12,7 +12,8 @@ const NoticiasProvider = ({ children }) => {
 
     useEffect(() => {
         const consultarAPI = async () => {
-            const url = `https://newsapi.org/v2/top-headlines?country=us&pageSize=12&category=${categoria}&apikey=${import.meta.env.VITE_API_KEY}`
+            const url = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&pageSize=12&category=${categoria}&apikey=${import.meta.env.VITE_API_KEY}`;
+
             const { data } = await axios(url)
             const { articles, totalResults } = data;
            
